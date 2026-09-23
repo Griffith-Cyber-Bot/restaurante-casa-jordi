@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Jordi | Restaurante & Brasa en Ibi, Alicante</title>
+<meta name="description" content="Casa Jordi, restaurante y brasa en Ibi (Alicante). Carnes a la brasa, pescado fresco y una casa con historia. Reserva tu mesa online.">
+<link rel="icon" href="fotos/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          charcoal: {
+            950: '#08090a', 900: '#111214', 800: '#1a1c1f', 700: '#25282c',
+            600: '#34383e', 500: '#484d54', 400: '#6b7178'
+          },
+          gold: {
+            100: '#faf3e2', 200: '#f3e3bd', 300: '#e8cd8f', 400: '#dab668',
+            500: '#c79a45', 600: '#a67f38', 700: '#83632c'
+          },
+          terracotta: {
+            400: '#e2604a', 500: '#cc4530', 600: '#ab3520', 700: '#872a1a', 800: '#661f13'
+          }
+        },
+        fontFamily: {
+          serif: ['"Playfair Display"', 'serif'],
+          sans: ['Poppins', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; background-color: #08090a; }
+  .font-serif { font-family: 'Playfair Display', serif; }
+  .nav-scrolled { background-color: rgba(8,9,10,0.94); box-shadow: 0 4px 24px rgba(0,0,0,0.4); border-bottom-color: rgba(199,154,69,0.15); }
+  .tab-btn.active { background-color: #cc4530; color: #faf3e2; border-color: #cc4530; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: grid; }
+  .star { color: #c79a45; letter-spacing: 2px; }
+  .gold-rule { background: linear-gradient(90deg, transparent, #c79a45, transparent); height: 1px; }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    100% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  }
+  .whatsapp-pulse { animation: pulse-ring 1.8s cubic-bezier(0.4,0,0.6,1) infinite; }
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .gallery-item img { transition: transform 0.6s ease, filter 0.6s ease; }
+  .gallery-item:hover img { transform: scale(1.08); filter: brightness(1.05); }
+  .img-frame { position: relative; }
+  .img-frame::after { content:''; position:absolute; inset:14px; border:1px solid rgba(199,154,69,0.4); pointer-events:none; }
+</style>
+</head>
+<body class="text-gray-200 antialiased">
+
+<!-- NAVBAR -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-transparent">
+  <nav class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-3 items-center h-20">
+    <div></div>
+
+    <a href="#inicio" class="justify-self-center font-serif text-xl md:text-2xl font-bold text-gold-300 tracking-wide">CASA JORDI</a>
+
+    <div class="justify-self-end flex items-center gap-3 md:gap-5">
+      <a href="tel:+34966845179" class="hidden sm:inline-flex text-sm font-semibold text-gray-300 hover:text-gold-400 transition-colors">📞 966 84 51 79</a>
+      <a href="#reserva" class="bg-terracotta-500 hover:bg-terracotta-400 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shadow-lg shadow-terracotta-900/40">Reservar Mesa</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="min-h-screen flex items-center justify-center relative bg-[#0f0f0f]">
+  <div class="max-w-4xl mx-auto text-center px-6 pt-20">
+    <span class="inline-flex items-center gap-2 bg-charcoal-900/70 border border-gold-500/40 text-gold-300 font-semibold text-xs md:text-sm tracking-widest uppercase px-4 py-2 rounded-full mb-6">Restaurante &amp; Brasa · Ibi, Alicante</span>
+    <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+      La casa donde el fuego <br class="hidden md:block"> se convierte en sabor
+    </h1>
+    <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+      Carnes a la brasa, pescado fresco y una sala con historia en el corazón de Ibi. Una experiencia gastronómica cercana, honesta y con carácter propio.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#reserva" class="w-full sm:w-auto bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold px-8 py-4 rounded-full transition-all shadow-lg shadow-terracotta-900/50 hover:-translate-y-0.5">Reservar Mesa</a>
+      <a href="#menu" class="w-full sm:w-auto bg-transparent hover:bg-gold-500/10 border border-gold-500/60 text-gold-300 font-semibold px-8 py-4 rounded-full backdrop-blur-sm transition-all">Ver la Carta</a>
+    </div>
+    <div class="flex items-center justify-center gap-6 mt-12 text-gray-300 text-sm">
+      <div class="flex items-center gap-1.5">
+        <span class="star text-lg">★★★★★</span>
+        <span class="font-semibold text-white">4.8/5</span>
+        <span class="opacity-70">· reseñas en Google</span>
+      </div>
+    </div>
+  </div>
+  <a href="#casa" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold-400/80 animate-bounce text-2xl" aria-label="Bajar">↓</a>
+</section>
+
+<!-- NUESTRA CASA -->
+<section id="casa" class="py-24 px-5 md:px-8 bg-charcoal-900">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+    <div class="img-frame fade-up order-2 lg:order-1">
+      <img src="fotos/interior-2.jpg" alt="Interior del comedor de Casa Jordi" class="rounded-sm w-full h-[380px] md:h-[440px] object-cover">
+    </div>
+    <div class="fade-up order-1 lg:order-2">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">Nuestra Casa</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3 mb-6">Una casa con historia en Ibi</h2>
+      <p class="text-gray-400 leading-relaxed mb-5">
+        Casa Jordi es mucho más que un restaurante: es un punto de encuentro para los ibenses desde hace más de dos décadas. Sala acogedora, luz cálida, manteles cuidados y un servicio de trato familiar que convierte cada visita en una ocasión especial.
+      </p>
+      <p class="text-gray-400 leading-relaxed mb-8">
+        Nuestra terraza en pleno centro, con sus luces de guirnalda y mesas a la calle, es el rincón favorito de la ciudad para alargar las sobremesas de verano.
+      </p>
+      <div class="gold-rule w-24 mb-8"></div>
+      <div class="grid grid-cols-3 gap-6">
+        <div>
+          <p class="font-serif text-3xl font-bold text-gold-400">20+</p>
+          <p class="text-sm text-gray-400">años en Ibi</p>
+        </div>
+        <div>
+          <p class="font-serif text-3xl font-bold text-gold-400">100%</p>
+          <p class="text-sm text-gray-400">brasa de leña</p>
+        </div>
+        <div>
+          <p class="font-serif text-3xl font-bold text-gold-400">4.3★</p>
+          <p class="text-sm text-gray-400">en Google</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EL CHEF -->
+<section id="chef" class="py-24 px-5 md:px-8 bg-charcoal-950 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+    <div class="fade-up">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">El Chef</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3 mb-6">Maestría en la brasa</h2>
+      <p class="text-gray-400 leading-relaxed mb-5">
+        Al frente de la parrilla, nuestro chef cuida cada pieza como si fuera la primera: selección de carnes maduradas, punto exacto de brasa y un golpe final de sal en escamas que despierta todos los sabores.
+      </p>
+      <p class="text-gray-400 leading-relaxed mb-8">
+        Años de oficio condensados en cada chuletón, cada costilla y cada pescado que sale de nuestra cocina. La brasa no perdona, y en Casa Jordi se domina a fuego lento.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 rounded-full border border-gold-500/40 text-gold-300 text-sm">Chuletón madurado</span>
+        <span class="px-4 py-2 rounded-full border border-gold-500/40 text-gold-300 text-sm">Costilla a baja temperatura</span>
+        <span class="px-4 py-2 rounded-full border border-gold-500/40 text-gold-300 text-sm">Pescado de lonja</span>
+      </div>
+    </div>
+    <div class="img-frame fade-up group overflow-hidden rounded-sm border border-gold-500/20 transition-all duration-300 ease-in-out hover:border-gold-400/70 hover:shadow-[0_0_45px_rgba(199,154,69,0.35)]">
+      <img src="fotos/chef.jpg" alt="Chef de Casa Jordi finalizando un chuletón a la brasa" class="rounded-sm w-full h-[380px] md:h-[440px] object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="py-24 px-5 md:px-8 bg-charcoal-900">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 fade-up">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">Nuestra Carta</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3">Del fuego a la mesa</h2>
+      <p class="text-gray-400 max-w-xl mx-auto mt-4">Producto seleccionado a diario. Precios entre 10€ y 20€.</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-12" id="tabButtons">
+      <button data-tab="entrantes" class="tab-btn active px-5 py-2.5 rounded-full border border-gold-500/50 text-gold-300 font-medium text-sm transition-colors">Entrantes</button>
+      <button data-tab="carnes" class="tab-btn px-5 py-2.5 rounded-full border border-gold-500/50 text-gold-300 font-medium text-sm transition-colors">Carnes a la Brasa</button>
+      <button data-tab="pescados" class="tab-btn px-5 py-2.5 rounded-full border border-gold-500/50 text-gold-300 font-medium text-sm transition-colors">Pescados Frescos</button>
+      <button data-tab="postres" class="tab-btn px-5 py-2.5 rounded-full border border-gold-500/50 text-gold-300 font-medium text-sm transition-colors">Postres</button>
+      <button data-tab="vinos" class="tab-btn px-5 py-2.5 rounded-full border border-gold-500/50 text-gold-300 font-medium text-sm transition-colors">Vinos</button>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+        <!-- Entrantes -->
+        <div class="tab-panel active grid gap-4" id="panel-entrantes">
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Jamón ibérico cortado a cuchillo</h3><p class="text-sm text-gray-400 mt-1">Con pan de cristal y tomate de temporada</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">16€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Croquetas caseras de jamón</h3><p class="text-sm text-gray-400 mt-1">Seis unidades, receta de la casa</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">10€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Pulpo a la brasa</h3><p class="text-sm text-gray-400 mt-1">Con puré de patata violeta y pimentón de la Vera</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">18€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Tabla de quesos curados</h3><p class="text-sm text-gray-400 mt-1">Selección de productores locales con membrillo casero</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">15€</span>
+          </div>
+        </div>
+
+        <!-- Carnes a la brasa -->
+        <div class="tab-panel grid gap-4" id="panel-carnes">
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Chuletón madurado a la brasa</h3><p class="text-sm text-gray-400 mt-1">Ración para compartir, con sal en escamas</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">20€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Secreto ibérico a la brasa</h3><p class="text-sm text-gray-400 mt-1">Con pimientos del piquillo y patata confitada</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">16€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Costilla de ternera a baja temperatura</h3><p class="text-sm text-gray-400 mt-1">Acabada a la brasa, con verduras de temporada</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">19€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Entrecot de vaca a la brasa</h3><p class="text-sm text-gray-400 mt-1">Con patatas panadera y pimientos asados</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">18€</span>
+          </div>
+        </div>
+
+        <!-- Pescados -->
+        <div class="tab-panel grid gap-4" id="panel-pescados">
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Lubina a la plancha</h3><p class="text-sm text-gray-400 mt-1">Con verduras salteadas y aceite de oliva virgen extra</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">18€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Bacalao confitado</h3><p class="text-sm text-gray-400 mt-1">Con crema de coliflor asada y aceite de perejil</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">17€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Dorada a la brasa</h3><p class="text-sm text-gray-400 mt-1">Con guarnición de temporada y limón</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">17€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Gambas rojas a la plancha</h3><p class="text-sm text-gray-400 mt-1">Ración, con sal en escamas y aceite de oliva</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">20€</span>
+          </div>
+        </div>
+
+        <!-- Postres -->
+        <div class="tab-panel grid gap-4" id="panel-postres">
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Coulant de chocolate</h3><p class="text-sm text-gray-400 mt-1">Con helado artesano de vainilla</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">10€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Tarta de queso de la casa</h3><p class="text-sm text-gray-400 mt-1">Con miel de romero de la Sierra de Mariola</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">10€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Torrija caramelizada</h3><p class="text-sm text-gray-400 mt-1">Con helado de canela y caramelo salado</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">10€</span>
+          </div>
+        </div>
+
+        <!-- Vinos -->
+        <div class="tab-panel grid gap-4" id="panel-vinos">
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Vino tinto D.O. Alicante</h3><p class="text-sm text-gray-400 mt-1">Botella, bodega local de Monóvar</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">16€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Vino blanco Marina Alta</h3><p class="text-sm text-gray-400 mt-1">Botella, fresco y afrutado</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">15€</span>
+          </div>
+          <div class="flex justify-between gap-4 p-5 rounded-sm bg-charcoal-800 border border-charcoal-700">
+            <div><h3 class="font-serif font-semibold text-lg text-white">Cava brut nature</h3><p class="text-sm text-gray-400 mt-1">Botella, perfecto para celebrar</p></div>
+            <span class="font-serif font-bold text-gold-400 whitespace-nowrap">20€</span>
+          </div>
+        </div>
+    </div>
+
+    <p class="text-center text-xs text-gray-500 mt-10">IVA incluido. Consulte alérgenos con nuestro equipo de sala.</p>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" class="py-24 px-5 md:px-8 bg-charcoal-950">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14 fade-up">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">Galería</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3">Así es Casa Jordi</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="gallery-item overflow-hidden rounded-sm fade-up">
+        <img src="fotos/interior-1.jpg" alt="Comedor principal de Casa Jordi" class="w-full h-64 object-cover">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-sm fade-up">
+        <img src="fotos/interior-2.jpg" alt="Detalle de sala con iluminación cálida" class="w-full h-64 object-cover">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-sm fade-up">
+        <img src="fotos/interior-3.jpg" alt="Ambiente del comedor" class="w-full h-64 object-cover">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-sm fade-up">
+        <img src="fotos/fachada-dia.jpg" alt="Terraza de Casa Jordi de día" class="w-full h-64 object-cover">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-sm fade-up">
+        <img src="fotos/carne-brasa.jpg" alt="Carne a la brasa de Casa Jordi" class="w-full h-64 object-cover">
+      </div>
+      <div class="gallery-item overflow-hidden rounded-sm fade-up">
+        <img src="fotos/pescado.jpg" alt="Pescado fresco de Casa Jordi" class="w-full h-64 object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section id="horarios" class="py-24 px-5 md:px-8 bg-charcoal-900 relative overflow-hidden">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center relative z-10">
+    <div class="fade-up">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">Horario</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3 mb-6">Te esperamos toda la semana</h2>
+      <p class="text-gray-400 leading-relaxed mb-8">Cocina abierta hasta las 22:30h entre semana y 23:00h los fines de semana. Recomendamos reservar con antelación, especialmente los fines de semana y en fiestas locales.</p>
+      <a href="#reserva" class="inline-block bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold px-7 py-3.5 rounded-full transition-colors">Reservar ahora</a>
+    </div>
+    <div class="bg-charcoal-800 rounded-sm p-8 border border-gold-500/20 fade-up">
+      <ul class="divide-y divide-charcoal-700">
+        <li class="flex justify-between py-3.5"><span class="font-medium text-gray-200">Martes – Viernes</span><span class="text-gray-400">13:00–16:00 / 20:00–23:00</span></li>
+        <li class="flex justify-between py-3.5"><span class="font-medium text-gray-200">Sábado</span><span class="text-gray-400">13:00–16:30 / 20:00–23:30</span></li>
+        <li class="flex justify-between py-3.5"><span class="font-medium text-gray-200">Domingo</span><span class="text-gray-400">13:00–16:30</span></li>
+        <li class="flex justify-between py-3.5"><span class="font-medium text-gray-200">Lunes</span><span class="text-terracotta-400 font-semibold">Cerrado</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section id="resenas" class="py-24 px-5 md:px-8 bg-charcoal-950">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 fade-up">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">Opiniones de Clientes</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3">Lo que dicen en Google Maps</h2>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <span class="star text-xl">★★★★★</span>
+        <span class="font-semibold text-white">4.8 sobre 5</span>
+        <span class="text-gray-500 text-sm">· reseñas verificadas</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-charcoal-800 p-6 rounded-sm border border-charcoal-700 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-11 h-11 rounded-full bg-terracotta-500 text-white flex items-center justify-center font-semibold">VM</div>
+          <div><p class="font-semibold text-white">Vicente Moltó</p><p class="text-xs text-gray-500">Hace 2 semanas</p></div>
+        </div>
+        <p class="star text-sm mb-2">★★★★★</p>
+        <p class="text-sm text-gray-400 leading-relaxed">"El chuletón a la brasa es de otro nivel. Punto exacto y una sala con muchísimo encanto. Trato cercano de toda la vida."</p>
+      </div>
+      <div class="bg-charcoal-800 p-6 rounded-sm border border-charcoal-700 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-11 h-11 rounded-full bg-gold-600 text-white flex items-center justify-center font-semibold">MF</div>
+          <div><p class="font-semibold text-white">Marisa Ferrando</p><p class="text-xs text-gray-500">Hace 1 mes</p></div>
+        </div>
+        <p class="star text-sm mb-2">★★★★★</p>
+        <p class="text-sm text-gray-400 leading-relaxed">"Celebramos el cumpleaños de mi padre y todo fue perfecto: las croquetas, la costilla y un servicio impecable. Se nota el cuidado en cada plato."</p>
+      </div>
+      <div class="bg-charcoal-800 p-6 rounded-sm border border-charcoal-700 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-11 h-11 rounded-full bg-terracotta-700 text-white flex items-center justify-center font-semibold">TP</div>
+          <div><p class="font-semibold text-white">Toni Pastor</p><p class="text-xs text-gray-500">Hace 3 semanas</p></div>
+        </div>
+        <p class="star text-sm mb-2">★★★★★</p>
+        <p class="text-sm text-gray-400 leading-relaxed">"De toda la vida en Ibi y sigue siendo mi restaurante de confianza. El pescado siempre fresquísimo. Precio muy justo para la calidad."</p>
+      </div>
+      <div class="bg-charcoal-800 p-6 rounded-sm border border-charcoal-700 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-11 h-11 rounded-full bg-terracotta-500 text-white flex items-center justify-center font-semibold">AL</div>
+          <div><p class="font-semibold text-white">Amparo Llorens</p><p class="text-xs text-gray-500">Hace 5 días</p></div>
+        </div>
+        <p class="star text-sm mb-2">★★★★★</p>
+        <p class="text-sm text-gray-400 leading-relaxed">"Fuimos por recomendación y no defraudó. La terraza de noche es preciosa y el postre de torrija, de diez."</p>
+      </div>
+      <div class="bg-charcoal-800 p-6 rounded-sm border border-charcoal-700 fade-up">
+        <div class="w-11 h-11 rounded-full bg-gold-600 text-white flex items-center justify-center font-semibold mb-3">JC</div>
+        <div class="flex items-center gap-3 mb-3 -mt-9 ml-14"><div><p class="font-semibold text-white">Jaume Cortés</p><p class="text-xs text-gray-500">Hace 2 meses</p></div></div>
+        <p class="star text-sm mb-2">★★★★★</p>
+        <p class="text-sm text-gray-400 leading-relaxed">"Comida de empresa para 15 personas y salió redonda. Muy atentos con las reservas grandes, la carne a la brasa fue lo más comentado."</p>
+      </div>
+      <div class="bg-charcoal-800 p-6 rounded-sm border border-charcoal-700 fade-up">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-11 h-11 rounded-full bg-terracotta-600 text-white flex items-center justify-center font-semibold">LR</div>
+          <div><p class="font-semibold text-white">Lourdes Requena</p><p class="text-xs text-gray-500">Hace 1 semana</p></div>
+        </div>
+        <p class="star text-sm mb-2">★★★★★</p>
+        <p class="text-sm text-gray-400 leading-relaxed">"Ambiente acogedor, ideal para una cena especial. La dorada a la brasa estaba en su punto exacto. Volveremos seguro."</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="https://www.google.com/maps/search/?api=1&query=Casa+Jordi+Restaurante+Ibi+Alicante" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-charcoal-800 border border-gold-500/40 text-gold-300 font-semibold px-6 py-3 rounded-full hover:bg-charcoal-700 transition-colors">
+        Ver todas las reseñas en Google Maps →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVA -->
+<section id="reserva" class="py-24 px-5 md:px-8 bg-charcoal-900">
+  <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-14 items-start">
+    <div class="fade-up">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">Reservas</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3 mb-6">Reserva tu mesa en segundos</h2>
+      <p class="text-gray-400 leading-relaxed mb-8">Rellena el formulario y nuestro equipo confirmará tu reserva por teléfono en menos de 2 horas. Para grupos de más de 10 personas, escríbenos directamente por WhatsApp.</p>
+
+      <div class="space-y-5">
+        <div class="flex items-start gap-4">
+          <span class="text-2xl">📍</span>
+          <div><p class="font-semibold text-white">Dirección</p><p class="text-gray-400 text-sm">Centro de Ibi, Alicante</p></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="text-2xl">📞</span>
+          <div><p class="font-semibold text-white">Teléfono</p><p class="text-gray-400 text-sm">966 84 51 79</p></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="text-2xl">✉️</span>
+          <div><p class="font-semibold text-white">Email</p><p class="text-gray-400 text-sm">reservas@casajordiibi.com</p></div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/34966845179?text=Hola%2C%20quiero%20reservar%20mesa%20en%20Casa%20Jordi" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1fb855] text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
+        <span class="text-xl">💬</span> Reservar por WhatsApp
+      </a>
+    </div>
+
+    <form id="reservaForm" class="bg-charcoal-800 border border-charcoal-700 rounded-sm p-6 md:p-8 fade-up">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-gray-300 mb-1.5">Nombre completo</label>
+          <input required type="text" name="nombre" placeholder="Tu nombre" class="w-full px-4 py-3 rounded-sm border border-charcoal-600 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition-all bg-charcoal-900 text-white placeholder-gray-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-1.5">Teléfono</label>
+          <input required type="tel" name="telefono" placeholder="600 000 000" class="w-full px-4 py-3 rounded-sm border border-charcoal-600 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition-all bg-charcoal-900 text-white placeholder-gray-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-1.5">Email</label>
+          <input required type="email" name="email" placeholder="tucorreo@email.com" class="w-full px-4 py-3 rounded-sm border border-charcoal-600 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition-all bg-charcoal-900 text-white placeholder-gray-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-1.5">Fecha</label>
+          <input required type="date" name="fecha" class="w-full px-4 py-3 rounded-sm border border-charcoal-600 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition-all bg-charcoal-900 text-white [color-scheme:dark]">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-1.5">Hora</label>
+          <select required name="hora" class="w-full px-4 py-3 rounded-sm border border-charcoal-600 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition-all bg-charcoal-900 text-white">
+            <option value="">Selecciona</option>
+            <option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>15:00</option>
+            <option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option><option>22:00</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-gray-300 mb-1.5">Comensales</label>
+          <select required name="comensales" class="w-full px-4 py-3 rounded-sm border border-charcoal-600 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition-all bg-charcoal-900 text-white">
+            <option value="">Selecciona</option>
+            <option>1 persona</option><option>2 personas</option><option>3 personas</option><option>4 personas</option>
+            <option>5 personas</option><option>6 personas</option><option>Más de 6 (grupo)</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-gray-300 mb-1.5">Comentarios (opcional)</label>
+          <textarea name="comentarios" rows="3" placeholder="Alergias, celebraciones, peticiones especiales..." class="w-full px-4 py-3 rounded-sm border border-charcoal-600 focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30 outline-none transition-all bg-charcoal-900 text-white placeholder-gray-500 resize-none"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="w-full mt-6 bg-terracotta-500 hover:bg-terracotta-400 text-white font-semibold py-4 rounded-sm transition-colors shadow-lg shadow-terracotta-900/40">Confirmar Reserva</button>
+      <p id="formMsg" class="hidden mt-4 text-center text-sm font-medium rounded-sm p-3"></p>
+    </form>
+  </div>
+</section>
+
+<!-- UBICACION -->
+<section id="ubicacion" class="py-24 px-5 md:px-8 bg-charcoal-950">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <span class="text-terracotta-400 font-semibold text-sm uppercase tracking-widest">Cómo llegar</span>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-3">Estamos en el centro de Ibi</h2>
+    </div>
+    <div class="rounded-sm overflow-hidden border border-gold-500/20 fade-up">
+      <iframe
+        src="https://maps.google.com/maps?q=Casa+Jordi+Restaurante+Ibi+Alicante&output=embed"
+        width="100%" height="420" style="border:0; filter: grayscale(0.3) invert(0.92) contrast(0.9);" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación de Casa Jordi en Ibi, Alicante">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-charcoal-950 border-t border-charcoal-800 text-gray-400 pt-16 pb-8 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 mb-12">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="fotos/logo.jpg" alt="Casa Jordi" class="w-10 h-10 rounded-full object-cover border border-gold-500">
+        <span class="font-serif text-xl font-bold text-gold-300">CASA JORDI</span>
+      </div>
+      <p class="text-sm text-gray-500 leading-relaxed">Restaurante y brasa en el corazón de Ibi, Alicante.</p>
+    </div>
+    <div>
+      <h4 class="font-semibold text-white mb-4">Navegación</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#menu" class="hover:text-gold-400 transition-colors">Menú</a></li>
+        <li><a href="#chef" class="hover:text-gold-400 transition-colors">El Chef</a></li>
+        <li><a href="#resenas" class="hover:text-gold-400 transition-colors">Reseñas</a></li>
+        <li><a href="#reserva" class="hover:text-gold-400 transition-colors">Reservas</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold text-white mb-4">Contacto</h4>
+      <ul class="space-y-2 text-sm">
+        <li>Centro de Ibi, Alicante</li>
+        <li>966 84 51 79</li>
+        <li>reservas@casajordiibi.com</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold text-white mb-4">Síguenos</h4>
+      <div class="flex gap-3">
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-charcoal-800 border border-gold-500/30 hover:bg-charcoal-700 transition-colors">📷</a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-charcoal-800 border border-gold-500/30 hover:bg-charcoal-700 transition-colors">📘</a>
+        <a href="https://wa.me/34966845179" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full bg-charcoal-800 border border-gold-500/30 hover:bg-charcoal-700 transition-colors">💬</a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-8 border-t border-charcoal-800 text-center text-xs text-gray-600">
+    © 2026 Casa Jordi Restaurante · Ibi, Alicante · Todos los derechos reservados
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/34966845179?text=Hola%2C%20quiero%20hacer%20una%20reserva" target="_blank" rel="noopener"
+   class="whatsapp-pulse fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1fb855] text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl transition-colors border-2 border-gold-400/60"
+   aria-label="Reservar por WhatsApp">
+  💬
+</a>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('nav-scrolled', window.scrollY > 40);
+  });
+
+// Menu tabs
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Reservation form
+  const reservaForm = document.getElementById('reservaForm');
+  const formMsg = document.getElementById('formMsg');
+  const today = new Date().toISOString().split('T')[0];
+  reservaForm.querySelector('input[name="fecha"]').min = today;
+
+  reservaForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(reservaForm).entries());
+    formMsg.classList.remove('hidden', 'bg-red-950', 'text-red-400');
+    formMsg.classList.add('bg-green-950', 'text-green-400', 'border', 'border-green-800');
+    formMsg.textContent = `¡Gracias, ${data.nombre.split(' ')[0]}! Hemos recibido tu solicitud para el ${data.fecha} a las ${data.hora}. Te confirmaremos por teléfono o email en breve.`;
+    reservaForm.reset();
+  });
+
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
